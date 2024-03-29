@@ -114,3 +114,48 @@ class Roles_usuario(db.Model):
     
     def __repr__(self):
         return f"<Roles_usuario(id_roles_usuario={self.id_roles_usuario},  nombre_rol={self.nombre_rol},  descripcion={self.descripcion})>"
+
+class Direccion(db.Model):
+    __tablename__ = 'direccion'
+    __table_args__ = {'schema': 'public'}
+
+    id_direccion = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(20), nullable=False)
+    
+    
+    def __repr__(self):
+        return f"<Direccion(id_direccion={self.id_direccion},  nombre={self.nombre})>"
+
+class Tipo_direccion(db.Model):
+    __tablename__ = 'tipo_direccion'
+    __table_args__ = {'schema': 'public'}
+
+    id_tipo_direccion = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(20), nullable=False)
+    
+    
+    def __repr__(self):
+        return f"<Tipo_direccion(id_tipo_direccion={self.id_tipo_direccion},  nombre={self.nombre})>"
+
+class Cliente_email(db.Model):
+    __tablename__ = 'cliente_email'
+    __table_args__ = {'schema': 'public'}
+
+    id_cliente_email = db.Column(db.Integer, primary_key=True)
+    id_tipo_email = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(20), nullable=False)
+    
+    def __repr__(self):
+        return f"<Cliente_email(id_cliente_email={self.id_cliente_email}, id_tipo_email={self.id_tipo_email}, email={self.email})>"
+
+
+class Tipo_email(db.Model):
+    __tablename__ = 'tipo_email'
+    __table_args__ = {'schema': 'public'}
+
+    id_tipo_email = db.Column(db.Integer, primary_key=True)
+    descripcion = db.Column(db.String(100), nullable=False)
+    
+    
+    def __repr__(self):
+        return f"<Tipo_email( id_tipo_email={self. id_tipo_email},   descripcion={self.  descripcion})>"

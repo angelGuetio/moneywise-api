@@ -8,6 +8,10 @@ from v1.tipo_usuario import tipo_usuario_v1_bp
 from v1.usuario_emails import usuario_emails_v1_bp
 from v1.usuario_roles import usuario_roles_v1_bp
 from v1.roles_usuario import roles_usuario_v1_bp
+from v1.direccion import direccion_v1_bp
+from v1.tipo_direccion import tipo_direccion_v1_bp
+from v1.cliente_email import cliente_email_v1_bp
+from v1.tipo_email import tipo_email_v1_bp
 
 def create_app():
     app = Flask(__name__)
@@ -28,7 +32,11 @@ def create_app():
     app.register_blueprint(usuario_emails_v1_bp, url_prefix='/v1/usuario_emails')
     app.register_blueprint(usuario_roles_v1_bp, url_prefix='/v1/usuario_roles')
     app.register_blueprint(roles_usuario_v1_bp, url_prefix='/v1/roles_usuario')
-    
+    app.register_blueprint(direccion_v1_bp, url_prefix='/v1/direccion')
+    app.register_blueprint(tipo_direccion_v1_bp, url_prefix='/v1/tipo_direccion')
+    app.register_blueprint(cliente_email_v1_bp, url_prefix='/v1/cliente_email')
+    app.register_blueprint(tipo_email_v1_bp, url_prefix='/v1/tipo_email')
+
 
     return app
 
